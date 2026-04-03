@@ -1,0 +1,20 @@
+{ config, pkgs, inputs, ... }:
+{
+    programs.zsh.enable = true;
+    users.users.emily = {
+        isNormalUser = true;
+        shell = pkgs.zsh;
+        description = "Emily Marriott";
+        extraGroups = [ "networkmanager" "wheel" "tss" "scanner" "lp" ];
+        packages = with pkgs; [
+            atuin
+            starship
+            zellij
+            lazygit
+            nvtopPackages.full
+            libnotify
+
+            musikcube
+        ];
+    };
+}
