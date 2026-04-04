@@ -1,31 +1,15 @@
 { config, pkgs, inputs, ... }:
 {
-    imports = [];
-    
     boot = {
         loader = {
             #systemd-boot.enable = true;
             limine = {
                 enable = true;
-                secureBoot.enable = true;
             };
             efi = {
                 canTouchEfiVariables = true;
                 efiSysMountPoint = "/boot/efi";
             };
-        };
-
-        plymouth = {
-            enable = true;
-            #theme = "BGRT";
-        };
-
-        # Use latest kernel.
-        #kernelPackages = pkgs.linuxPackages_6_19;
-        kernelPackages = pkgs.linuxPackages_latest;
-        initrd = {
-            systemd.enable = true;
-            verbose = "false";
         };
 
         consoleLogLevel = 3;

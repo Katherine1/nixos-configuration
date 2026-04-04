@@ -8,7 +8,7 @@
         ../../modules/hardware/asi-cameras.nix
         ../../modules/hardware/epson-et2750.nix
         ../../modules/hardware/epson-perfection-v600-photo.nix
-        ../../modules/boot
+        ../../modules/boot/graphical.nix
         ../../modules/locale.nix
         ../../modules/networking
         ../../modules/desktopEnvironment/kde-plasma.nix
@@ -19,6 +19,16 @@
 
     networking.hostName = "poplar";
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+    boot.loader.limine.secureBoot.enable = true;
+
+    # Use latest kernel.
+    #kernelPackages = pkgs.linuxPackages_6_19;
+    kernelPackages = pkgs.linuxPackages_latest;
+    initrd = {
+        systemd.enable = true;
+        verbose = "false";
+    };
 
     hardware.bluetooth.settings.General.Enable = "Source,Sink,Media,Socket";
 
