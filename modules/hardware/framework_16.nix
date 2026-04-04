@@ -21,33 +21,14 @@
             enable = true;
             enableOffloadCmd = true;
         };
-        amdgpuBusId = "PCI:194@0:0:0";
-        nvidiaBusId = "PCI:001@0:0:0";
     };
 
     services = {
-        ucodenix = {
-            enable = true;
-            cpuModelId = "00A70F41";
-        };
+        ucodenix.enable = true;
 
         # NixOS Hardware wants ppd or tlp enabled by default. Override to tuned
         power-profiles-daemon.enable = false;
         tlp.enable = false;
-        tuned = {
-            enable = true;
-            ppdSettings = {
-                battery = {
-                    power-saver = "laptop-battery-powersave";
-                    balanced = "balanced-battery";
-                    performance = "balanced";
-                };
-                profiles = {
-                    power-saver = "laptop-ac-powersave";
-                    balanced = "balanced";
-                    performance = "throughput-performance";
-                };
-            };
-        };
+        tuned.enable = true;
     };
 }
