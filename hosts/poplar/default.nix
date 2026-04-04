@@ -2,7 +2,9 @@
 {
     imports = [
         ./hardware-configuration.nix
-        ../../modules/hardware/framework_16.nix
+        inputs.nixos-hardware.nixosModules.framework-16-amd-ai-300-series-nvidia
+        inputs.ucodenix.nixosModules.default
+        ../../modules/hardware/fw16_rtx_5070.nix
         ../../modules/hardware/bluetooth.nix
         ../../modules/hardware/asi-cameras.nix
         ../../modules/hardware/epson-et2750.nix
@@ -27,6 +29,10 @@
         # Use latest kernel.
         #kernelPackages = pkgs.linuxPackages_6_19;
         kernelPackages = pkgs.linuxPackages_latest;
+        kernelParams = [
+            "amdgpu.abmlevel=0"
+            #"microcode.amd_sha_check=off"
+        ];
         initrd = {
             systemd.enable = true;
             verbose = "false";
@@ -43,21 +49,34 @@
     };
 
     services = {
-        ucodenix.cpuModelId = "00A70F41";
+        ucodenix = {
+            enable = true;
+            cpuModelId = "00A70F41";
+        };
 
-        tuned.ppdSettings = {
-            battery = {
-                power-saver = "laptop-battery-powersave";
-                balanced = "balanced-battery";
-                performance = "balanced";
-            };
-            profiles = {
-                power-saver = "laptop-ac-powersave";
-                balanced = "balanced";
-                performance = "throughput-performance";
+        # NixOS Hardware wants ppd or tlp enabled by default. Override to tuned
+        power-profiles-daemon.enable = false;
+        tlp.enable = false;
+        tuned = {
+            enable = true;
+            ppdSettings = {
+                battery = {
+                    power-saver = "laptop-battery-powersave";
+                    balanced = "balanced-battery";
+                    performance = "balanced";
+                };
+                profiles = {
+                    power-saver = "laptop-ac-powersave";
+                    balanced = "balanced";
+                    performance = "throughput-performance";
+                };
             };
         };
     };
+
+    environment.systemPackages = with pkgs; [
+        framework-tool
+    ];
 
     fileSystems = {
         "/".options = [ "compress=zstd" ];
