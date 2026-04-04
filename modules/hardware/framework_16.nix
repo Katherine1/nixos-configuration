@@ -4,6 +4,7 @@
         inputs.nixos-hardware.nixosModules.framework-16-amd-ai-300-series-nvidia
         inputs.ucodenix.nixosModules.default
         ../graphics/nvidia.nix
+        ../services/switcheroo.nix
     ];
 
     boot.kernelParams = [
@@ -13,7 +14,6 @@
 
     environment.systemPackages = with pkgs; [
         framework-tool
-        switcheroo-control
     ];
     
     hardware.nvidia.prime = {
@@ -49,14 +49,5 @@
                 };
             };
         };
-    };
-
-    systemd.services.switcheroo-control = {
-        description = "Switcheroo Control Proxy service";
-        before = [ "multi-user.target" "display-manager.service" "alsa-restore.service" "alsa-state.service" ];
-        serviceConfig = {
-            ExecStart = "${pkgs.switcheroo-control}/libexec/switcheroo-control";
-        };
-        wantedBy = [ "graphical.target" ];
     };
 }
