@@ -46,8 +46,7 @@
                 cudapkgs = ulcudapkgs;
             };
 	        modules = [
-                ./hardware-configuration.nix
-                ./hosts/poplar.nix
+                ./hosts/poplar
 	        ];
         };
     };
