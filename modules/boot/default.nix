@@ -17,6 +17,10 @@
             "quiet"
             "udev.log_level=3"
             "systemd.show_status=auto"
+            "zswap.enabled=1"
+            "zswap.compressor=lz4"
+            "zswap.max_pool_percent=50"
+            "zswap.shrinker_enabled=1"
         ];
 
     };
