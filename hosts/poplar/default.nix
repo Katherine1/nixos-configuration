@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, cudapkgs, inputs, ... }:
 {
     imports = [
         ./hardware-configuration.nix
@@ -15,9 +15,9 @@
         ../../modules/networking
 
         ../../modules/desktopEnvironment/kde-plasma.nix
-        ../../modules/services/poplar
-        ../../modules/user/poplar
-        ../../modules/systemPackages/poplar
+        ./services.nix
+        ./users
+        ./systemPackages.nix
     ];
 
     networking.hostName = "poplar";

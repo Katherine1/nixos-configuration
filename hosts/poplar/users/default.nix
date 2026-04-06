@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, cudapkgs, inputs, ... }:
 {
     imports = [
         ./emily.nix

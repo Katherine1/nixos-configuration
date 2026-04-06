@@ -7,7 +7,7 @@
         ../../modules/networking
         ../../modules/locale.nix
 
-        ../../modules/user/emily.nix
+        ../../modules/users/emily/cli.nix
     ];
 
     networking.hostName = "wolf";

@@ -6,15 +6,5 @@
         shell = pkgs.zsh;
         description = "Emily Marriott";
         extraGroups = [ "networkmanager" "wheel" "tss" "scanner" "lp" ];
-        packages = with pkgs; [
-            atuin
-            starship
-            zellij
-            lazygit
-            nvtopPackages.full
-            libnotify
-
-            musikcube
-        ];
     };
 }
