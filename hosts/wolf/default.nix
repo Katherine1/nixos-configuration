@@ -28,7 +28,7 @@
     };
 
     boot = {
-        loader.limine.secureBoot.enable = false;
+        loader.systemd-boot.enable = true;
 
         kernelPackages = pkgs.linuxPackages;
         initrd = {

@@ -24,7 +24,10 @@
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     boot = {
-        loader.limine.secureBoot.enable = true;
+        loader.limine = {
+            enable = true;
+            secureBoot.enable = true;
+        };
 
         # Use latest kernel.
         #kernelPackages = pkgs.linuxPackages_6_19;
