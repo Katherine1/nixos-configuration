@@ -2,16 +2,30 @@
 {
     imports = [
         ./hardware-configuration.nix
-        nixos-hardware.nixosModules.framework-12th-gen-intel
+        #nixos-hardware.nixosModules.framework-12th-gen-intel
         ../../modules/boot
-        ../../modules/networking
         ../../modules/locale.nix
 
-        ../../modules/users/emily/cli.nix
+        ./services.nix
+        ./systemPackages.nix
+        ./users
     ];
 
-    networking.hostName = "wolf";
     nix.settings.experimental-features = [ "nix-command", "flakes" ];
+
+    services.qemuGuest.enable = true;
+    services.spice-vdagentd.enable = true;
+
+    networking = {
+        hostName = "wolf";
+
+        enableIPv6 = true;
+        interfaces.eth0 = {
+            address = "2603:6000:9305:4bc4::2";
+            prefixLength = 64;
+        };
+    };
+    networking.hostName = "wolf";
 
     boot = {
         loader.limine.secureBoot.enable = false;

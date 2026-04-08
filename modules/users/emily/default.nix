@@ -5,6 +5,6 @@
         isNormalUser = true;
         shell = pkgs.zsh;
         description = "Emily Marriott";
-        extraGroups = [ "networkmanager" "wheel" "tss" "scanner" "lp" ];
+        extraGroups = [ "networkmanager" "podman" "wheel" "tss" "scanner" "lp" ];
     };
 }
