@@ -3,6 +3,7 @@
     imports = [
         ./hardware-configuration.nix
         #nixos-hardware.nixosModules.framework-12th-gen-intel
+        ../../modules/hardware/kvm-guest.nix
         ../../modules/boot
         ../../modules/locale.nix
 
@@ -11,7 +12,7 @@
         ./users
     ];
 
-    nix.settings.experimental-features = [ "nix-command", "flakes" ];
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     services.qemuGuest.enable = true;
     services.spice-vdagentd.enable = true;
@@ -95,12 +96,12 @@
                 "_netdev"
             ];
         };
-        
-        swapDevices = [{
-            device = "/swap/swapfile";
-            size = 1024*32;
-        }];
     };
+
+    swapDevices = [{
+        device = "/swap/swapfile";
+        size = 1024*32;
+    }];
 
     system.stateVersion = "25.11";
 }
