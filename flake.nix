@@ -58,7 +58,7 @@
             modules = [
                 ./hosts/wolf
             ];
-        }
+        };
     };
   };
 }
