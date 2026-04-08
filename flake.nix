@@ -49,6 +49,16 @@
                 ./hosts/poplar
 	        ];
         };
+        "wolf" = nixpkgs-stable-large.lib.nixosSystem {
+            inherit system;
+            pkgs = slpkgs;
+            specialArgs = {
+                inherit inputs;
+            };
+            modules = [
+                ./hosts/wolf
+            ];
+        }
     };
   };
 }
