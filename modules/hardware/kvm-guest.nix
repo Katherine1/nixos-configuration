@@ -15,5 +15,5 @@
     services.qemuGuest = {
         enable = true;
         agent.enable = true;
-    }
+    };
 }
