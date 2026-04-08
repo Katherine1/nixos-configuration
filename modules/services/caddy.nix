@@ -1,0 +1,66 @@
+{ config, pkgs, inputs, ... }:
+{
+    services.caddy = {
+        enable = true;
+
+        globalConfig = ''
+            admin off
+        '';
+
+        virtualHosts = {
+            "audiobookshelf.elm.rocks".extraConfig = ''
+                tls internal
+                encode gzip zstd
+                reverse_proxy 192.168.50.11:13378
+            '';
+
+            "bark.elm.rocks".extraConfig = ''
+                tls internal
+                encode gzip zstd
+                reverse_proxy 192.168.50.7
+            '';
+
+            "dockge.elm.rocks".extraConfig = ''
+                tls internal
+                encode gzip zstd
+                reverse_proxy 192.168.50.11:5001
+            '';
+
+            "freshrss.elm.rocks".extraConfig = ''
+                tls internal
+                encode gzip zstd
+                reverse_proxy 192.168.50.11:55321
+            '';
+
+            "homeassistant.elm.rocks".extraConfig = ''
+                tls internal
+                encode gzip zstd
+                reverse_proxy 192.168.50.3:8123
+            '';
+
+            "immich.elm.rocks".extraConfig = ''
+                tls internal
+                encode gzip zstd
+                reverse_proxy 192.168.50.11:2283
+            '';
+
+            "navidrome.elm.rocks".extraConfig = ''
+                tls internal
+                encode gzip zstd
+                reverse_proxy 192.168.50.11:4533
+            '';
+
+            "jelly.elm.rocks".extraConfig = ''
+                tls internal
+                encode gzip zstd
+                reverse_proxy 192.168.50.11:8096
+            '';
+
+            "syncthing.elm.rocks".extraConfig = ''
+                tls internal
+                encode gzip zstd
+                reverse_proxy 192.168.50.11:8384
+            '';
+        };
+    };
+}
