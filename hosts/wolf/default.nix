@@ -20,12 +20,11 @@
         hostName = "wolf";
 
         enableIPv6 = true;
-        interfaces.eth0 = {
-            address = "2603:6000:9305:4bc4::2";
-            prefixLength = 64;
-        };
+        #interfaces.eth0 = {
+        #    address = "2603:6000:9305:4bc4::2";
+        #    prefixLength = 64;
+        #};
     };
-    networking.hostName = "wolf";
 
     boot = {
         loader.limine.secureBoot.enable = false;
