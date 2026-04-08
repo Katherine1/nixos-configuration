@@ -79,10 +79,10 @@
     ];
 
     fileSystems = {
-        "/".options = [ "compress=zstd" "discard=async" ];
-        "/home".options = [ "compress=zstd" "discard=async" ];
-        "/nix".options = [ "compress=zstd" "noatime" "discard=async" ];
-        "/swap".options = [ "noatime" "discard=async" ];
+        "/".options = [ "compress=zstd" ];
+        "/home".options = [ "compress=zstd" ];
+        "/nix".options = [ "compress=zstd" "noatime" ];
+        "/swap".options = [ "noatime" ];
         "/mnt/emily" = {
             device = "smb.elm.rocks:/homes/Emily";
             fsType = "nfs";
