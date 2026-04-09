@@ -43,7 +43,7 @@
     };
 
     hardware = {
-        bluetooth.settings.General.Enable = "Source,Sink,Media,Socket";
+        #bluetooth.settings.General.Enable = "Source,Sink,Media,Socket";
 
         nvidia.prime = {
             amdgpuBusId = "PCI:194@0:0:0";
