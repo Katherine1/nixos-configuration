@@ -4,7 +4,7 @@
         kstars
         siril
         pixinsight
-        inputs.astro-catalogue-viewer.packages."${system}".default
-        inputs.firecapture.packages."${system}".default
+        inputs.astro-catalogue-viewer.packages."${pkgs.stdenv.hostPlatform.system}".default
+        inputs.firecapture.packages."${pkgs.stdenv.hostPlatform.system}".default
     ];
 }
