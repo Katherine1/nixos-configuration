@@ -54,57 +54,58 @@
         framework-tool
     ];
 
-    #fileSystems = {
-    #    "/".options = [ "compress=zstd" ];
-    #    "/home".options = [ "compress=zstd" ];
-    #    "/nix".options = [ "compress=zstd" "noatime" ];
-    #    "/swap".options = [ "noatime" ];
-    #    "/mnt/Multimedia" = {
-    #        device = "smb.elm.rocks:/Multimedia";
-    #        fsType = "nfs";
-    #        options = [
-    #            "defaults"
-    #            "noatime"
-    #            "nolock"
-    #            "async"
-    #            "vers=4.1"
-    #            "noauto"
-    #            "x-systemd.automount"
-    #            "x-systemd.mount-timeout=10"
-    #            "timeo=14"
-    #            "x-sytemd.idle-timeout=1min"
-    #            "_netdev"
-    #        ];
-    #    };
-    #    "/mnt/Containers" = {
-    #        device = "smb.elm.rocks:/homes/wolf";
-    #        fsType = "nfs";
-    #        options = [
-    #            "defaults"
-    #            "noatime"
-    #            "nolock"
-    #            "async"
-    #            "vers=4.1"
-    #            "noauto"
-    #            "x-systemd.automount"
-    #            "x-systemd.mount-timeout=10"
-    #            "timeo=14"
-    #            "x-sytemd.idle-timeout=1min"
-    #            "_netdev"
-    #        ];
-    #    };
-    #};
+    fileSystems = {
+        "/".options = [ "compress=zstd" ];
+        "/home".options = [ "compress=zstd" ];
+        "/nix".options = [ "compress=zstd" "noatime" ];
+        "/swap".options = [ "noatime" ];
+        "/mnt/Multimedia" = {
+            device = "smb.elm.rocks:/Multimedia";
+            fsType = "nfs";
+            options = [
+                "defaults"
+                "noatime"
+                "nolock"
+                "async"
+                "vers=4.1"
+                "noauto"
+                "x-systemd.automount"
+                "x-systemd.mount-timeout=10"
+                "timeo=14"
+                "x-sytemd.idle-timeout=1min"
+                "_netdev"
+            ];
+        };
+        "/mnt/Containers" = {
+            device = "smb.elm.rocks:/homes/wolf";
+            fsType = "nfs";
+            options = [
+                "defaults"
+                "noatime"
+                "nolock"
+                "async"
+                "vers=4.1"
+                "noauto"
+                "x-systemd.automount"
+                "x-systemd.mount-timeout=10"
+                "timeo=14"
+                "x-sytemd.idle-timeout=1min"
+                "_netdev"
+            ];
+        };
+    };
 
-    #swapDevices = [{
-    #    device = "/swap/swapfile";
-    #    size = 1024*32;
-    #}];
+    swapDevices = [{
+        device = "/swap/swapfile";
+        size = 1024*32;
+    }];
 
-    virtualisation.vmVariant.virtualisation.forwardPorts = [
-        { from = "host"; host.port = 2222; guest.port = 22; }
-        { from = "host"; host.port = 443; guest.port = 443; }
-    ];
-    users.users.emily.initialPassword = "test";
+    #virtualisation.vmVariant.virtualisation.forwardPorts = [
+    #    { from = "host"; host.port = 2222; guest.port = 22; }
+    #    { from = "host"; host.port = 4443; guest.port = 4443; }
+    #    { from = "host"; host.port = 8081; guest.port = 8080; }
+    #];
+    #users.users.emily.initialPassword = "test";
 
     system.stateVersion = "25.11";
 }
