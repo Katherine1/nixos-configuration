@@ -14,9 +14,6 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-    services.qemuGuest.enable = true;
-    services.spice-vdagentd.enable = true;
-
     networking = {
         hostName = "wolf";
 
@@ -103,16 +100,11 @@
     #    size = 1024*32;
     #}];
 
-    virtualization = {
-        memorySize = 1024*8;
-        diskSize = 1024*60;
-        cores = 4;
-        graphics = true;
-        forwardPorts = [
-            { from = "host"; host.port = 2222; guest.port = 22; }
-            { from = "host"; host.port = 443; guest.port = 443; }
-        ];
-    }
+    virtualisation.vmVariant.virtualisation.forwardPorts = [
+        { from = "host"; host.port = 2222; guest.port = 22; }
+        { from = "host"; host.port = 443; guest.port = 443; }
+    ];
+    users.users.emily.initialPassword = "test";
 
     system.stateVersion = "25.11";
 }
