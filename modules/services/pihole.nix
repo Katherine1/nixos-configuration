@@ -1,13 +1,10 @@
 { config, pkgs, inputs, ... }:
 {
-    networking.firewall.allowedTCPPorts = [
-        8080
-        4443
-    ];
-
     services = {
         pihole-ftl = {
             enable = true;
+            openFirewallDNS = true;
+            openFirewallWebserver = true;
             settings = {
                 dns = {
                     upstreams = [

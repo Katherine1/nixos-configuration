@@ -1,8 +1,6 @@
 { config, pkgs, inputs, ... }:
 {
     networking.firewall.allowedTCPPorts = [
-        80
-        443
         2283
         4533
         5001
@@ -15,6 +13,7 @@
 
     services.caddy = {
         enable = true;
+        openFirewall = true;
 
         globalConfig = ''
             admin off

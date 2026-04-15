@@ -1,9 +1,10 @@
 { config, pkgs, inputs, ... }:
 {
     services.open-webui = {
-        enable = true;
+        enable = false;
         host = "127.0.0.1";
         port = 8080;
+        openFirewall = true;
     };
     
     environment.systemPackages = with pkgs; [
