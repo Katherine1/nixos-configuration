@@ -1,5 +1,18 @@
 { config, pkgs, inputs, ... }:
 {
+    networking.firewall.allowedTCPPorts = [
+        80
+        443
+        2283
+        4533
+        5001
+        8096
+        8123
+        8384
+        11378
+        55321
+    ];
+
     services.caddy = {
         enable = true;
 

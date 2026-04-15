@@ -1,5 +1,10 @@
 { config, pkgs, inputs, ... }:
 {
+    networking.firewall.allowedTCPPorts = [
+        8080
+        4443
+    ];
+
     services = {
         pihole-ftl = {
             enable = true;

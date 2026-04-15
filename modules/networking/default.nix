@@ -4,6 +4,7 @@
 
     networking = {
         networkmanager.enable = true;
+        firewall.enable = true;
 
 #       nameservers = [ "127.0.0.1" ];
     };
