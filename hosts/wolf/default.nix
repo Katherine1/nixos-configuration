@@ -3,7 +3,6 @@
     imports = [
         ./hardware-configuration.nix
         inputs.nixos-hardware.nixosModules.framework-12th-gen-intel
-        #../../modules/hardware/kvm-guest.nix
         ../../modules/boot
         ../../modules/locale.nix
 
@@ -18,10 +17,10 @@
         hostName = "wolf";
 
         enableIPv6 = true;
-        #interfaces.eth0 = {
-        #    address = "2603:6000:9305:4bc4::2";
-        #    prefixLength = 64;
-        #};
+        interfaces."enp0s13f0u3".ipv6.addresses = [{
+            address = "2603:6000:9305:4bc4::11";
+            prefixLength = 64;
+        }];
     };
 
     boot = {

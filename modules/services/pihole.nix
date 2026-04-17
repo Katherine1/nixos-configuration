@@ -1,5 +1,10 @@
 { config, pkgs, inputs, ... }:
 {
+    networking.firewall.allowedTCPPorts = [
+        8080
+        4443
+    ];
+
     services = {
         pihole-ftl = {
             enable = true;
@@ -62,9 +67,10 @@
 
         pihole-web = {
             enable = true;
+            hostName = "wolf.elm.rocks";
             ports = [
                 "8080o"
-                "4443os"
+                "4443s"
                 #"[::]:8080o"
                 #"[::]:4443"
             ];
