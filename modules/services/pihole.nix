@@ -59,7 +59,7 @@
                 {
                     url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/multi.txt";
                     type = "block";
-                    enabled = false;
+                    enabled = true;
                     description = "Multi Normal: https://github.com/hagezi/dns-blocklists";
                 }
             ];
