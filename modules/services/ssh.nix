@@ -4,7 +4,7 @@
         enable = true;
         openFirewall = true;
         settings = {
-            PasswordAuthentication = true;
+            PasswordAuthentication = false;
             KbdInteractiveAuthentication = false;
             PermitRootLogin = "no";
             AllowUsers = [ "emily" ];

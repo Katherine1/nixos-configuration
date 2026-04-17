@@ -2,8 +2,8 @@
 {
     imports = [
         ./hardware-configuration.nix
-        #nixos-hardware.nixosModules.framework-12th-gen-intel
-        ../../modules/hardware/kvm-guest.nix
+        inputs.nixos-hardware.nixosModules.framework-12th-gen-intel
+        #../../modules/hardware/kvm-guest.nix
         ../../modules/boot
         ../../modules/locale.nix
 
