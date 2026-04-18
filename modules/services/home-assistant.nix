@@ -19,6 +19,10 @@
 
                 server_port = 8123;
             };
+            
+            defaultIntegrations = [
+                "mqtt"
+            ];
 
             extraComponents = [
                 "default_config"
