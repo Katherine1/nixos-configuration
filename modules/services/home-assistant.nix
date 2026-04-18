@@ -22,6 +22,7 @@
             
             defaultIntegrations = [
                 "mqtt"
+                "usb"
             ];
 
             extraComponents = [
@@ -29,6 +30,7 @@
                 "met"
                 "radio_browser"
                 "mqtt"
+                "usb"
             ];
         };
 
