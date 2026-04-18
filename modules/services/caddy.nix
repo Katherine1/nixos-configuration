@@ -24,7 +24,7 @@
             "audiobookshelf.elm.rocks".extraConfig = ''
                 tls internal
                 encode gzip zstd
-                reverse_proxy 192.168.50.11:13378
+                reverse_proxy 192.168.50.2:13378
             '';
 
             "bark.elm.rocks".extraConfig = ''
@@ -36,13 +36,13 @@
             "dockge.elm.rocks".extraConfig = ''
                 tls internal
                 encode gzip zstd
-                reverse_proxy 192.168.50.11:5001
+                reverse_proxy 192.168.50.2:5001
             '';
 
             "freshrss.elm.rocks".extraConfig = ''
                 tls internal
                 encode gzip zstd
-                reverse_proxy 192.168.50.11:55321
+                reverse_proxy 192.168.50.2:55321
             '';
 
             "homeassistant.elm.rocks".extraConfig = ''
@@ -54,25 +54,25 @@
             "immich.elm.rocks".extraConfig = ''
                 tls internal
                 encode gzip zstd
-                reverse_proxy 192.168.50.11:2283
+                reverse_proxy 192.168.50.2:2283
             '';
 
             "navidrome.elm.rocks".extraConfig = ''
                 tls internal
                 encode gzip zstd
-                reverse_proxy 192.168.50.11:4533
+                reverse_proxy 192.168.50.2:4533
             '';
 
             "jelly.elm.rocks".extraConfig = ''
                 tls internal
                 encode gzip zstd
-                reverse_proxy 192.168.50.11:8096
+                reverse_proxy 192.168.50.2:8096
             '';
 
             "syncthing.elm.rocks".extraConfig = ''
                 tls internal
                 encode gzip zstd
-                reverse_proxy 192.168.50.11:8384
+                reverse_proxy 192.168.50.2:8384
             '';
         };
     };

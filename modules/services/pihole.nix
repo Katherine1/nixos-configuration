@@ -21,19 +21,18 @@
 
                     hosts = [
                         "192.168.50.1 gateway.elm.rocks"
-                        "192.168.50.2 milwaukee.elm.rocks"
                         "192.168.50.3 homeassistant.elm.rocks"
                         "192.168.50.7 bark.elm.rocks"
                         "192.168.50.8 smb.elm.rocks"
                         "192.168.50.9 octopi.elm.rocks"
-                        "192.168.50.11 audiobookshelf.elm.rocks"
-                        "192.168.50.11 jelly.elm.rocks"
-                        "192.168.50.11 syncthing.elm.rocks"
-                        "192.168.50.11 freshrss.elm.rocks"
-                        "192.168.50.11 wolf.elm.rocks"
-                        "192.168.50.11 dockge.elm.rocks"
-                        "192.168.50.11 immich.elm.rocks"
-                        "192.168.50.11 navidrome.elm.rocks"
+                        "192.168.50.2 audiobookshelf.elm.rocks"
+                        "192.168.50.2 jelly.elm.rocks"
+                        "192.168.50.2 syncthing.elm.rocks"
+                        "192.168.50.2 freshrss.elm.rocks"
+                        "192.168.50.2 wolf.elm.rocks"
+                        "192.168.50.2 dockge.elm.rocks"
+                        "192.168.50.2 immich.elm.rocks"
+                        "192.168.50.2 navidrome.elm.rocks"
                     ];
 
                     domainNeeded = true;
