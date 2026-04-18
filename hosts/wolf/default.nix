@@ -35,6 +35,8 @@
     };
 
     services = {
+        fwupd.enable = true;
+
         power-profiles-daemon.enable = false;
         tlp.enable = false;
         tuned = {

@@ -1,9 +1,11 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ulpkgs, inputs, ... }:
 {
     services = {
         home-assistant = {
             enable = true;
             openFirewall = true;
+
+            package = ulpkgs.home-assistant;
 
             config = {
                 homeassistant = {

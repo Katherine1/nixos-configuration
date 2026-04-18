@@ -54,6 +54,7 @@
             pkgs = slpkgs;
             specialArgs = {
                 inherit inputs;
+                ulpkgs = ulpkgs;
             };
             modules = [
                 ./hosts/wolf
