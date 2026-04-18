@@ -18,7 +18,7 @@
 
         enableIPv6 = true;
         interfaces."enp0s13f0u3".ipv6.addresses = [{
-            address = "2603:6000:9305:4bc4::11";
+            address = "2603:6000:9305:4bc4::2";
             prefixLength = 64;
         }];
     };
