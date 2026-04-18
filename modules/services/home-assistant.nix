@@ -2,7 +2,7 @@
 {
     services = {
         home-assistant = {
-            enable = true;
+            enable = false;
             openFirewall = true;
 
             package = ulpkgs.home-assistant;
@@ -28,6 +28,6 @@
             ];
         };
 
-        mosquitto.enable = true;
+        mosquitto.enable = false;
     };
 }
