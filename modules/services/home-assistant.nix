@@ -18,17 +18,13 @@
                 server_port = 8123;
             };
             
-            defaultIntegrations = [
-                "mqtt"
-                "usb"
-            ];
-
             extraComponents = [
                 "default_config"
                 "met"
                 "radio_browser"
                 "mqtt"
                 "usb"
+                "zha"
             ];
         };
 
