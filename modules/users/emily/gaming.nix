@@ -5,6 +5,7 @@
         augustus
         daggerfall-unity
         openmw
+        prismlauncher
         xivlauncher
     ];
 }
