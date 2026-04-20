@@ -4,5 +4,6 @@
         obsidian
         libreoffice-qt-fresh
         typst
+        typstwriter
     ];
 }
