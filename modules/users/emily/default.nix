@@ -5,6 +5,16 @@
         isNormalUser = true;
         shell = pkgs.zsh;
         description = "Emily Marriott";
-        extraGroups = [ "networkmanager" "docker" "podman" "wheel" "tss" "scanner" "lp" ];
+        extraGroups = [ 
+            "dialout"
+            "networkmanager"
+            "docker"
+            "podman"
+            "wheel"
+            "tss"
+            "scanner"
+            "lp"
+            "uucp"
+        ];
     };
 }
