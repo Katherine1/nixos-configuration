@@ -5,5 +5,6 @@
         handbrake
         losslesscut-bin
         picard
+        feishin
     ];
 }
