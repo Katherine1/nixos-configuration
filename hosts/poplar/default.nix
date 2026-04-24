@@ -23,6 +23,8 @@
     networking.hostName = "poplar";
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+    nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.default ];
+
     boot = {
         loader.limine = {
             enable = true;
@@ -31,7 +33,7 @@
 
         # Use latest kernel.
         #kernelPackages = pkgs.linuxPackages_6_19;
-        kernelPackages = pkgs.linuxPackages_latest;
+        kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
         kernelParams = [
             "amdgpu.abmlevel=0"
             #"microcode.amd_sha_check=off"

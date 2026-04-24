@@ -5,6 +5,7 @@
     nixpkgs-stable-large.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable-large.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     ucodenix.url = "github:e-tho/ucodenix";
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
