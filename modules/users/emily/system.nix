@@ -4,7 +4,7 @@
         appimage-run
         ghostty
         q4wine
-        bottles
+        #bottles
         vorta
     ];
 }
