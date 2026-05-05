@@ -20,5 +20,6 @@
     environment.systemPackages = with pkgs; [
         ollama-cuda
         #ollama-rocm
+        aider-chat-full
     ];
 }
