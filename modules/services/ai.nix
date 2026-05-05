@@ -30,7 +30,14 @@
         open-webui.wantedBy = lib.mkForce [];
     };
 
-    environment.systemPackages = with pkgs; [
-        aider-chat-full
-    ];
+    environment = {
+        systemPackages = with pkgs; [
+            aider-chat-full
+        ];
+
+        variables = {
+            OLLAMA_API_BASE="http://127.0.0.1:11434";
+            OLLAMA_CONTEXT_LENGTH=8192;
+        };
+    };
 }
