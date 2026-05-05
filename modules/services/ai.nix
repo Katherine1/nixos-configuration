@@ -1,8 +1,16 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 {
     services = {
+        ollama = {
+            enable = true;
+            host = "127.0.0.1";
+            port = 11434;
+            openFirewall = true;
+            package = pkgs.ollama-cuda;
+        };
+
         open-webui = {
-            enable = false;
+            enable = true;
             host = "127.0.0.1";
             port = 8080;
             openFirewall = true;
@@ -16,10 +24,13 @@
             usageCollection = false;
         };
     };
-    
+
+    systemd.services = {
+        ollama.wantedBy = lib.mkForce [];
+        open-webui.wantedBy = lib.mkForce [];
+    };
+
     environment.systemPackages = with pkgs; [
-        ollama-cuda
-        #ollama-rocm
         aider-chat-full
     ];
 }
