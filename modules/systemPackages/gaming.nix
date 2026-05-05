@@ -16,5 +16,6 @@
         heroic
         mangohud
         mangojuice
+        protonplus
     ];
 }
